@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire de Contact</title>
+    <link href="assets/css/styles.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .form-group span.error-message {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Formulaire de Contact</h1>
+        <form action="submit_form.php" method="post" id="contactForm">
+            <div class="form-group">
+                <label for="company">Société</label>
+                <input type="text" id="company" name="company" required />
+                <span class="error-message" id="companyError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="contactPerson">Personne à contacter</label>
+                <input type="text" id="contactPerson" name="contactPerson" required />
+                <span class="error-message" id="contactPersonError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="postalCode">Code postal</label>
+                <input type="text" id="postalCode" name="postalCode" pattern="\d{5}" required />
+                <span class="error-message" id="postalCodeError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="city">Ville</label>
+                <input type="text" id="city" name="city" required />
+                <span class="error-message" id="cityError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+                <span class="error-message" id="emailError"></span>
+            </div>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+
+
+
+    <!-- Autres champs du formulaire -->
+
+    <div class="form-group">
+        <label for="envTech">Environnement technique</label>
+        <select id="envTech" name="envTech" onchange="updateTextArea()">
+            <option value="">Choisissez</option>
+            <option value="HTML/CSS">HTML/CSS</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+            <option value="PHP">PHP</option>
+        </select>
+        <input type="text" id="envTechText" name="envTechText" placeholder="Sélectionner ou ajouter des informations"
+            oninput="handleManualInput()" />
+    </div>
+
+    <button type="submit">Envoyer</button>
+    </form>
+    </div>
+
+
+    <script src="assets/js/javascript.js">
+
+
+
+
+    </script>
+
+</body>
+
+</html>

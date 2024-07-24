@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercices JavaScript</title>
+</head>
+<body>
+    <script>
+        // 1. Demande successivement à l'utilisateur son nom puis son prénom et affiche les informations via une alert()
+        let nom = prompt("Entrez votre nom :");
+        let prenom = prompt("Entrez votre prénom :");
+        alert("Informations de l'utilisateur :\nNom : " + nom + "\nPrénom : " + prenom);
+
+        // 2. Calcule le produit de deux nombres entrés par l'utilisateur et affiche le résultat
+        let nombre1 = prompt("Entrez le premier nombre :");
+        let nombre2 = prompt("Entrez le deuxième nombre :");
+        let produit = Number(nombre1) * Number(nombre2);
+        alert("Le produit de " + nombre1 + " et " + nombre2 + " est : " + produit);
+
+        // 3. Convertit des degrés Celsius en degrés Fahrenheit et affiche la température convertie
+        let celsius = prompt("Entrez la température en degrés Celsius :");
+        let fahrenheit = (Number(celsius) * 9 / 5) + 32;
+        alert(celsius + " degrés Celsius est égal à " + fahrenheit + " degrés Fahrenheit.");
+    </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //Exercice 1
+        function demanderPrenom() {
+            let prenoms = []; // Tableau pour stocker les prénoms saisis
+            let prenom;
+
+            do {
+                prenom = prompt("Entrez un prénom (ou laissez vide pour arrêter) :");
+                if (prenom !== "") {
+                    prenoms.push(prenom);
+                }
+            } while (prenom !== "");
+
+            // Afficher le nombre de prénoms et les prénoms saisis sur la console
+            console.log("Nombre de prénoms saisis : " + prenoms.length);
+            console.log("Prénoms saisis :");
+            prenoms.forEach(function (item) {
+                console.log(item);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h2>Saisie de prénoms</h2>
+    <button onclick="demanderPrenom()">Commencer la saisie</button>
+
+    <script>
+        //Exercice 2
+
+        function afficherEntiersInferieurs() {
+            // Demander à l'utilisateur de saisir un nombre N
+            let n = prompt("Entrez un nombre entier N :");
+
+            // Vérifier si l'entrée est un nombre entier positif
+            if (isNaN(n) || parseInt(n) !== parseFloat(n) || n <= 0) {
+                alert("Veuillez entrer un nombre entier positif valide.");
+                return;
+            }
+
+            // Convertir l'entrée en nombre entier
+            n = parseInt(n);
+
+            // Afficher les entiers inférieurs à N
+            let entiersInferieurs = "";
+            for (let i = 1; i < n; i++) {
+                entiersInferieurs += i + ", ";
+            }
+            entiersInferieurs += n - 1;
+
+            // Afficher les résultats dans une boîte d'alerte
+            alert("Les entiers inférieurs à " + n + " sont : " + entiersInferieurs);
+        }
+    </script>
+</head>
+<body>
+    <h2>Entiers inférieurs à N</h2>
+    <button onclick="afficherEntiersInferieurs()">Afficher les entiers inférieurs à N</button>
+
+    <script>
+        
+        // Exercice 3
+
+        function calculerMoyenne() {
+            let nombre;
+            let somme = 0;
+            let count = 0;
+
+            while (true) {
+                nombre = prompt("Entrez un nombre entier (0 pour terminer) :");
+
+                // Vérifier si l'utilisateur a annulé ou entré un non-nombre
+                if (nombre === null || isNaN(nombre)) {
+                    alert("Veuillez entrer un nombre entier valide.");
+                    continue;
+                }
+
+                // Convertir l'entrée en nombre entier
+                nombre = parseInt(nombre);
+
+                // Vérifier si l'utilisateur a entré 0 pour terminer
+                if (nombre === 0) {
+                    break;
+                }
+
+                // Calculer la somme des nombres saisis
+                somme += nombre;
+                count++;
+            }
+
+            // Calculer la moyenne
+            let moyenne = count === 0 ? 0 : somme / count;
+
+            // Afficher les résultats dans une boîte d'alerte
+            alert("La somme des nombres saisis est : " + somme + "\nLa moyenne est : " + moyenne);
+        }
+    </script>
+</head>
+<body>
+    <h2>Calcul de la moyenne</h2>
+    <button onclick="calculerMoyenne()">Calculer la moyenne</button>
+
+    <script>
+
+        
+        // Exercice 4
+
+        function calculerMultiples() {
+            let x = parseInt(prompt("Entrez un nombre entier X :"));
+            let n = parseInt(prompt("Entrez un nombre entier N (nombre de multiples à calculer) :"));
+
+            if (isNaN(x) || isNaN(n) || x <= 0 || n <= 0) {
+                alert("Veuillez entrer des valeurs valides (entiers positifs non nuls).");
+                return;
+            }
+
+            let multiples = [];
+
+            for (let i = 1; i <= n; i++) {
+                multiples.push(x * i);
+            }
+
+            alert("Les " + n + " premiers multiples de " + x + " sont :\n" + multiples.join(", "));
+        }
+    </script>
+</head>
+<body>
+    <h2>Calcul des N premiers multiples de X</h2>
+    <button onclick="calculerMultiples()">Calculer les multiples</button>
+
+
+    <script>
+        
+        //Exercice 5
+
+        function compterVoyelles() {
+            let mot = prompt("Entrez un mot :");
+
+            if (!mot) {
+                alert("Vous n'avez pas saisi de mot.");
+                return;
+            }
+
+            // Convertir le mot en minuscules pour un traitement uniforme
+            mot = mot.toLowerCase();
+
+            let nombreVoyelles = 0;
+            let voyelles = "aeiouy"; // On considère y comme une voyelle dans cet exemple
+
+            for (let i = 0; i < mot.length; i++) {
+                if (voyelles.indexOf(mot[i]) !== -1) {
+                    nombreVoyelles++;
+                }
+            }
+
+            alert("Le mot \"" + mot + "\" contient " + nombreVoyelles + " voyelle(s).");
+        }
+    </script>
+</head>
+<body>
+    <h2>Compteur de voyelles</h2>
+    <button onclick="compterVoyelles()">Compter les voyelles</button>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice JavaScript : Saisie et Calcul de Valeurs Numériques</title>
+    <script>
+        // Définition de la fonction saisieEtCalcul
+        function saisieEtCalcul() {
+            let valeurs = [];
+            let valeur;
+            
+            // Boucle pour saisir les valeurs jusqu'à ce que l'utilisateur entre 0
+            do {
+                valeur = prompt("Entrez une valeur numérique (0 pour arrêter) :");
+                valeur = parseFloat(valeur); // Convertir en nombre flottant
+                
+                // Vérifier si la valeur est un nombre et n'est pas 0
+                if (!isNaN(valeur) && valeur !== 0) {
+                    valeurs.push(valeur);
+                }
+            } while (valeur !== 0); // Sortir de la boucle quand la valeur est 0
+            
+            // Calculer le nombre de valeurs saisies
+            let nombreValeurs = valeurs.length;
+            
+            // Calculer la somme des valeurs saisies
+            let somme = 0;
+            for (let i = 0; i < valeurs.length; i++) {
+                somme += valeurs[i];
+            }
+            
+            // Calculer la moyenne des valeurs saisies
+            let moyenne = somme / nombreValeurs;
+            
+            // Afficher les résultats dans la page HTML
+            let resultatDiv = document.getElementById("resultats");
+            resultatDiv.innerHTML = "<p>Nombre de valeurs saisies : " + nombreValeurs + "</p>" +
+                                    "<p>Somme des valeurs : " + somme + "</p>" +
+                                    "<p>Moyenne des valeurs : " + moyenne + "</p>";
+        }
+    </script>
+</head>
+<body>
+    <h1>Exercice JavaScript :</h1>
+    
+    <button onclick="saisieEtCalcul()">Démarrer la saisie</button>
+    
+    <div id="resultats">
+        <!-- Les résultats seront affichés ici -->
+    </div>
+</body>
+</html>

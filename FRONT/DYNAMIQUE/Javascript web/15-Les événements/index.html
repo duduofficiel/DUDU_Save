@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Nombre Magique</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <h1>Devinez le Nombre Magique</h1>
+
+    
+    <p>Choisissez un nombre entre 1 et 100.</p>
+    <input type="number" id="textBox1" min="1" max="100">
+    <button id="controlButton">Contrôler</button>
+    <p id="label1"></p>
+    
+    <div id="label1">Entrez votre proposition</div>
+    <input id="textBox1" value="">
+    <input type="button" id="button1" value="Verifier" onclick="verif();">  
+
+    <div id="infoWindow" class="hidden">
+        <p id="infoMessage"></p>
+        <button id="closeButton">Fermer</button>
+    </div>
+
+    <script src="javascript.js"></script>
+    
+</body>
+</html>

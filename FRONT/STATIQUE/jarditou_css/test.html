@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    Bonjour !!!
+    <script src="/assets/js/script.js"></script>
+
+    <script>
+        function maFonction() {
+            var plop1 = 123;
+            return plop1;
+        }
+
+        function maFonction2() {
+            plop2 = 456;
+        }
+
+        plop1 = maFonction();
+
+        console.log("fonction 1 / plop1 : " + plop1);
+
+        maFonction2();
+
+        console.log("mafonction2 > plop2 : " + plop2);
+
+        let carre = function (nombre) {
+            let resultat = nombre * nombre;
+            //Appel de la fonction carre() : var k=carre(2); var x=0; while (x < 5) {
+            console.log("x : " + x);
+            x++;
+        }
+        function boucle(x) {
+            if (x >= 10) {
+
+            }
+        }
+        function creerTableau() {
+            let taille = document.getElementById("taille").value;
+            let valeursDiv = document.getElementById("valeurs");
+            valeursDiv.innerHTML = '';
+
+            for (let i = 0; i < taille; i++) {
+                let input = document.createElement("input");
+                input.type = "text";
+                input.placeholder = `Valeur ${i + 1}`;
+                input.id = `valeur${i}`;
+                valeursDiv.appendChild(input);
+                valeursDiv.appendChild(document.createElement("br"));
+            }
+
+            let boutonAfficher = document.createElement("button");
+            boutonAfficher.textContent = "Afficher le tableau";
+            boutonAfficher.onclick = afficherTableau;
+            valeursDiv.appendChild(boutonAfficher);
+        }
+
+        function afficherTableau() {
+            let taille = document.getElementById("taille").value;
+            let tableau = [];
+            
+            for (let i = 0; i < taille; i++) {
+                let valeur = document.getElementById(`valeur${i}`).value;
+                tableau.push(valeur);
+            }
+
+            let resultatDiv = document.getElementById("resultat");
+            resultatDiv.innerHTML = '<h2>Contenu du tableau :</h2>';
+
+            let table = document.createElement("table");
+            let tbody = document.createElement("tbody");
+
+            for (let i = 0; i < tableau.length; i++) {
+                let row = document.createElement("tr");
+                let cell = document.createElement("td");
+                cell.textContent = tableau[i];
+                row.appendChild(cell);
+                tbody.appendChild(row);
+            }
+
+            table.appendChild(tbody);
+            resultatDiv.appendChild(table);
+        }
+
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>

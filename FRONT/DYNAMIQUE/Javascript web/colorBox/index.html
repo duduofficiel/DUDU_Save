@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ფერის რეგულირება</title>
+<link rel="stylesheet" href="assets/style/style.css">
+</head>
+<body>
+
+<div class="main-container">
+    <div class="container" id="small-boxes">
+        <!-- აქ განლაგდება 20 პატარა კუბიკი -->
+    </div>
+    <div class="large-box" id="large-box"></div>
+    <div class="slider-container">
+        <label class="slider-label">rouge:</label>
+        <input type="range" id="red-slider" class="slider" min="0" max="255" value="46" oninput="updateColor()">
+        <label class="slider-label">vert:</label>
+        <input type="range" id="green-slider" class="slider" min="0" max="255" value="204" oninput="updateColor()">
+        <label class="slider-label">blue:</label>
+        <input type="range" id="blue-slider" class="slider" min="0" max="255" value="113" oninput="updateColor()">
+    </div>
+</div>
+
+<script src="assets/js/javascript.js">
+    
+</script>
+
+</body>
+</html>

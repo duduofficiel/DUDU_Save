@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function verifierParite() {
+            // Récupérer le nombre entré par l'utilisateur
+            let nombre = parseInt(document.getElementById("nombre").value);
+
+            // Vérifier si le nombre est pair ou impair
+            if (nombre % 2 === 0) {
+                alert(nombre + " est un nombre pair.");
+            } else {
+                alert(nombre + " est un nombre impair.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Vérification de la parité d'un nombre</h2>
+    <label for="nombre">Entrez un nombre :</label>
+    <input type="number" id="nombre" name="nombre">
+    <button onclick="verifierParite()">Vérifier</button>
+
+    
+</body>
+</html>

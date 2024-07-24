@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Déclaration de variables en JavaScript dans HTML</title>
+</head>
+<body>
+    
+    <script>
+        // Déclaration de variables en JavaScript
+        var firstName = "John"; // Utilisation de var pour déclarer une variable
+        let age = 30; // Utilisation de let pour déclarer une variable
+        const PI = 3.14; // Utilisation de const pour déclarer une constante
+        
+        // Utilisation des variables
+        console.log(firstName); // Affiche "John" dans la console du navigateur
+        console.log(age); // Affiche 30
+        console.log(PI); // Affiche 3.14
+        
+        // Modification de la variable `age`
+        age = 31;
+        console.log(age); // Maintenant, affiche 31
+        
+        // PI = 3.14159; // Erreur : Impossible de réaffecter une constante
+        
+        // Déclaration d'une variable globale (accessible depuis n'importe où dans le script)
+        var globalVar = "Variable globale";
+
+        function myFunction() {
+            // Déclaration d'une variable locale (portée à cette fonction)
+            var localVar = "Variable locale";
+            console.log(localVar); // Affiche "Variable locale"
+        }
+
+        myFunction();
+        console.log(globalVar); // Affiche "Variable globale"
+        // console.log(localVar); // Erreur : localVar n'est pas défini en dehors de myFunction
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Inscription</h1>
+    <form id="inscriptionForm">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <br>
+        <button type="submit">S'inscrire</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Accéder au formulaire
+            let form = document.getElementById('inscriptionForm');
+
+            // Accéder aux éléments du formulaire
+            let nomInput = document.getElementById('nom');
+            let option1 = document.getElementById('option1');
+            let option2 = document.getElementById('option2');
+            let submitButton = form.querySelector('button[type="submit"]');
+
+            // Modifier les valeurs initiales des éléments
+            nomInput.value = "Jean Dupont";
+            option1.checked = true;
+
+            // Ajouter un événement de soumission au formulaire
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Empêcher l'envoi du formulaire
+                console.log('Formulaire soumis!');
+                console.log('Nom:', nomInput.value);
+                console.log('Option sélectionnée:', option1.checked ? option1.value : option2.value);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Inscription</h1>
+    <form id="inscriptionForm">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom"><br>
+
+        <label for="option1">Option 1:</label>
+        <input type="radio" id="option1" name="option" value="1"><br>
+        
+        <label for="option2">Option 2:</label>
+        <input type="radio" id="option2" name="option" value="2"><br>
+        
+        <button type="submit">S'inscrire</button>
+    </form>
+
+
+    <script>
+        function testerRadio() 
+        {
+            var radio = document.getElementsByName("btnRadChoix");
+    
+                    for (var i=0; i<radio.length;i++) 
+                    {
+                        if (radio[i].checked) 
+                        {
+                            document.getElementById("txtBox1").value = radio[i].value;
+                        }
+                    }
+                }
+            </script>
+        </head>
+    
+        <body>
+            <form name="frmChoix">
+                <input type="radio" name="btnRadChoix" value="semaine" checked> Semaine
+                <br>
+                <input type="radio"  name="btnRadChoix" value="week end"> Week-end 
+                <br>
+                <input type="button" name="btn" value="Choix" onclick="testerRadio();">
+                <br>
+                <input id="txtBox1" type ="text" name="txtChoix" value="">
+            </form>
+    <form action="" id="form1" name="form1">
+        <input type="text" name= "nom" value="Mozart">
+        <input type="text" name= "prenom" value="Ella">
+        <input type="submit" id="idSubForm1" name="subForm1" value="Connection">
+    </form>
+    <div id="idDiv">
+        <p>Je suis un paragraphe dans une div</p></div>
+        <script>
+        document.getElementById('idDiv').innerHTML = "<h3>Titre</h3>";
+        </script>
+
+
+<input type="text" id="txtBox">
+
+    <script>
+        document.getElementById('txtBox').value = 53;
+    </script> 
+
+
+    <script>
+        console.log("La 2nde zone de texte a pour nom : ");
+        console.log(document.forms['form1'].elements[1].name);
+        console.log("La 1ère zone de texte a pour valeur : '");
+        console.log(document.forms['form1'].elements['nom'].value);
+        console.log("Le bouton Submit a pour identifiant unique : ");
+        console.log(document.getElementById('idSubForm1').id);
+        console.log("Le bouton Submit a pour valeur : ");
+        console.log(document.getElementsByName('subForm1')[0].value);
+    </script>
+    <script>
+        function testerRadio() 
+        {
+            var radio = document.getElementsByName("btnRadChoix");
+    
+                    for (var i=0; i<radio.length;i++) 
+                    {
+                        if (radio[i].checked) 
+                        {
+                            document.getElementById("txtBox1").value = radio[i].value;
+                        }
+                    }
+                }
+            </script>
+        </head>
+    
+        <body>
+            <form name="frmChoix">
+                <input type="radio" name="btnRadChoix" value="semaine" checked> Semaine
+                <br>
+                <input type="radio"  name="btnRadChoix" value="week end"> Week-end 
+                <br>
+                <input type="button" name="btn" value="Choix" onclick="testerRadio();">
+                <br>
+                <input id="txtBox1" type ="text" name="txtChoix" value="">
+            </form>
+
+<script type="text/JavaScript" language="JavaScript">
+var version = navigator.appVersion;
+console.log("Le code name de votre browser est :"    + navigator.appCodeName);
+console.log("Le nom ou la marque du browser est :"   + navigator.appName); 
+console.log("Les informations sur la version sont :" + version); 
+console.log("Le browser a comme user-agent :"        + navigator.userAgent);
+console.log("");
+
+if (version.indexOf('Win') > -1) 
+{ 
+    console.log("<br />Vous etes sous l'environnement Windows");
+    console.log("<br />");
+}
+
+if (navigator.userAgent.indexOf('Firefox') > -1) 
+{ 
+console.log("Vous utilisez un navigateur FireFox");
+} 
+else if (version.indexOf('Chrome') > -1) 
+{ 
+    console.log("Vous utilisez un navigateur Chrome");
+} 
+else if (version.indexOf('MSIE') > -1) 
+{ 
+    console.log("Vous utilisez un navigateur Microsoft Internet Explorer");
+} 
+else 
+{
+    console.log("Vous utilisez un navigateur inconnu");
+}
+</script>
+
+
+
+
+</body>
+</html>
