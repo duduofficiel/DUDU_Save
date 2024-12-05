@@ -7,7 +7,7 @@ menu.onclick = () => {
 }
 
 let section = document.querySelectorAll('section');
-let navlinks = document.querySelectorAll('header .navbar a');
+let navLinks = document.querySelectorAll('header .navbar a');
 
 window.onscroll = () => {
 
@@ -20,8 +20,7 @@ section.forEach(sec => {
     let height = sec.offsetHeight;
     let offset = sec.offsetTop - 150;
     let id = sec.getAttribute('id');
-
-    if (top => offset && top < offset + height) {
+    if(id !== null && top >= offset && top < offset + height) {
         navLinks.forEach(links => {
             links.classList.remove('active');
             document.querySelector('header .navbar a[href*=' + id + ']').classList.add('active');
@@ -39,22 +38,44 @@ document.querySelector('#close').onclick = () => {
     document.querySelector('#search-form').classList.remove('active');
 }
 
-var swiper = new swiper(".home-slider", {
-    spaceBetween: 30,
-    centeredSlides: true,
+var swiper1 = new Swiper(".home-slider", {
+    spacebetween: 20,
+    centeredslides: true,
     autoplay: {
         delay: 7500,
+        disableooninteraction: false,
+    },
+    loop: true,
+    breakpoints: {
+        0: {
+            slidesperview: 1,
+        },
+        640: {
+            slidesperview: 2,
+        },
+        768: {
+            slidesperview: 2,
+        },
+        1024: {
+            slidesperview: 3,
+        },
+    },
+/*    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+        delay: 500,
         disableoOnInteraction: false,
     },
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
     },
-    loop: true,
+    loop: false,
+*/
 });
 
-var swiper = new swiper(".review-slider", {
-    specebetween: 20,
+var swiper2 = new Swiper(".review-slide", {
+    spacebetween: 20,
     centeredslides: true,
     autoplay: {
         delay: 7500,
@@ -81,7 +102,9 @@ var swiper = new swiper(".review-slider", {
 
 
 function loader() {
-    document.querySelector('.loader-container').classList.add('fade-out');
+    let loader=document.querySelector('.loader-container');
+    if(loader)
+    loader.classList.add('fade-out');
 }
 
 function fadeOut() {
@@ -89,3 +112,10 @@ function fadeOut() {
 }
 
 window.onload = fadeOut;
+
+
+
+// ღილაკის ჩვენება
+
+
+
